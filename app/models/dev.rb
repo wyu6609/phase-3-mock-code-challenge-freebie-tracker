@@ -5,8 +5,8 @@ class Dev < ActiveRecord::Base
   #   `Dev#received_one?(item_name)`
   #   - accepts an `item_name` (string) and returns true if any of the freebies
   #     associated with the dev has that `item_name`, otherwise returns false
-  def received_one?(item_name)
-    freebies.where(item_name: item_name) ? true : false
+  def received_one?(string)
+    freebies.find_by(item_name: string) ? true : false
   end
 
   # - `Dev#give_away(dev, freebie)`
